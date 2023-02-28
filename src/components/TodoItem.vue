@@ -15,6 +15,7 @@ const props = defineProps<{
   description: string
   options: Array<string>
   status: string
+  badgeClass: string
 }>()
 
 const changeStatus = (todoId: string, newStatus: string) => {
@@ -25,14 +26,19 @@ const changeStatus = (todoId: string, newStatus: string) => {
 
 <template>
   <div>
-    <h2>{{ title }}</h2>
-    <h3>{{ status }}</h3>
-    <p>{{ description }}</p>
-    <Select
-      v-model="selection"
-      :options="options"
-      :id="'status-change'"
-      @input="changeStatus(props.id, selection)"
-    />
+    <div class="card p-3 shadow-sm">
+      <h4 class="d-flex justify-content-end">
+        <span class="badge" :class="badgeClass">{{ status }}</span>
+      </h4>
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
+      <Select
+        v-model="selection"
+        :options="options"
+        :id="'status-change'"
+        @input="changeStatus(props.id, selection)"
+        class="m-0"
+      />
+    </div>
   </div>
 </template>

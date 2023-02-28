@@ -10,15 +10,23 @@ const todoStore = useTodoStore()
 
 const { todos } = storeToRefs(todoStore)
 
-watchEffect(()=> {
-  localStorage.setItem('todos', JSON.stringify(todos.value));
+watchEffect(() => {
+  localStorage.setItem('todos', JSON.stringify(todos.value))
 })
-
 </script>
 
 <template>
-  <NewToDo />
-  <TodoList :items="todos" />
+  <div class="container">
+    <div class="row">
+      <h1 class="">To do app</h1>
+    </div>
+    <div class="row mt-3">
+      <NewToDo />
+    </div>
+    <div class="row mt-5">
+      <TodoList :items="todos" />
+    </div>
+  </div>
 </template>
 
 <style scoped></style>

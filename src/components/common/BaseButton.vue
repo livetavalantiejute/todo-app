@@ -2,6 +2,7 @@
 defineProps<{
   type: 'button' | 'submit' | 'reset'
   title: string
+  buttonClass: string
 }>()
 
 defineEmits(['@click'])
@@ -9,6 +10,6 @@ defineEmits(['@click'])
 
 <template>
   <div>
-    <button :type="type" @click="$emit('@click')">{{ title }}</button>
+    <button :type="type" @click="$emit('@click')" :class="buttonClass">{{ title }}</button>
   </div>
 </template>
