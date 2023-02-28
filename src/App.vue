@@ -17,15 +17,17 @@ watchEffect(() => {
 
 <template>
   <div class="container">
-    <div class="row">
-      <h1 class="">To do app</h1>
-    </div>
-    <div class="row mt-3">
-      <NewToDo />
-    </div>
-    <div class="row mt-5">
-      <TodoList :items="todos" />
-    </div>
+    <header class="row">
+      <h1>To do app</h1>
+    </header>
+    <main>
+      <div class="row mt-3">
+        <NewToDo />
+      </div>
+      <div class="row mt-5">
+        <TodoList :items="todos" />
+      </div>
+    </main>
   </div>
 </template>
 

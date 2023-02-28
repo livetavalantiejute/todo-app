@@ -56,8 +56,8 @@ const submitTodo = () => {
 <template>
   <form class="border p-5 rounded-3 shadow-sm" @submit.prevent="submitTodo">
     <h2 class="text-center">Add a new To do</h2>
-    <div class="alert alert-danger" role="alert">
-      <p v-if="errors.length">Please fix the following errors:</p>
+    <div class="alert alert-danger" role="alert" v-if="errors.length">
+      <p>Please fix the following errors:</p>
       <ul>
         <li v-for="(err, index) in errors" :key="index">{{ err }}</li>
       </ul>
