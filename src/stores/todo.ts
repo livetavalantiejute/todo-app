@@ -11,7 +11,12 @@ export const useTodoStore = defineStore('todo', () => {
     Closed: ['Opened']
   }
 
-  const todos: Ref<Array<{ [k: string]: any }>> = ref([])
+  const todosFromStorage: Array<{ [k: string]: any }> = JSON.parse(localStorage.getItem('todos') || '[]');
+
+  const todos: Ref<Array<{ [k: string]: any }>> = ref(todosFromStorage)
+
+  console.log(todosFromStorage)
+  console.log(todos)
 
   const addTodo = (passedItem: object) => {
     const newItem = {
