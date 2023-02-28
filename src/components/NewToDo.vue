@@ -7,7 +7,6 @@ import Input from './common/BaseInput.vue'
 import Select from './common/BaseSelect.vue'
 import Button from './common/BaseButton.vue'
 
-
 const titleText = ref('')
 const descriptionText = ref('')
 const selectedStatus = ref('Opened')
