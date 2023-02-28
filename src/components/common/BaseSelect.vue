@@ -17,7 +17,7 @@ defineEmits(['update:modelValue'])
       @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
       :value="modelValue"
     >
-      <option :value="'placeholder'" disabled>Change status</option>
+      <option :value="'placeholder'" disabled hidden>Change status</option>
       <option v-for="(option, index) in options" :key="index">{{ option }}</option>
     </select>
   </div>
