@@ -4,8 +4,7 @@ import TodoItem from './TodoItem.vue'
 import { useTodoStore } from '@/stores/todo'
 
 const todoStore = useTodoStore()
-
-const { statusTransitions } : { [key: string]: any } = todoStore
+const { statusTransitions }: { [key: string]: any } = todoStore
 
 defineProps<{
   items: Array<{ [k: string]: any }>

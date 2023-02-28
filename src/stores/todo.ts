@@ -23,7 +23,9 @@ export const useTodoStore = defineStore('todo', () => {
   }
 
   const editStatus = (id: string, newStatus: string) => {
-    const changedItem: { [k: string]: any } = todos.value.find((item: { [k: string]: any }) => item.id === id) as Object
+    const changedItem: { [k: string]: any } = todos.value.find(
+      (item: { [k: string]: any }) => item.id === id
+    ) as Object
     changedItem['status'] = newStatus
   }
 

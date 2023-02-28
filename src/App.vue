@@ -11,14 +11,8 @@ const { todos } = storeToRefs(todoStore)
 </script>
 
 <template>
-  <!--  | Add a todo
-
-        | To do list
-        |-- To do item
-  -->
   <NewToDo />
-  <TodoList :items="todos"/>
-{{ todos }}
+  <TodoList :items="todos" />
 </template>
 
 <style scoped></style>

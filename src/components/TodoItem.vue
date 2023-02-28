@@ -7,7 +7,6 @@ import Select from './common/BaseSelect.vue'
 const selection = ref('placeholder')
 
 const todoStore = useTodoStore()
-
 const { editStatus } = todoStore
 
 const props = defineProps<{
