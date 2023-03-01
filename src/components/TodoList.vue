@@ -10,7 +10,7 @@ const badgeColors: { [key: string]: any } = {
 
 defineProps<{
   items: Array<{ [k: string]: any }>
-  statusTransitions: object
+  statusTransitions: { [k: string]: any }
 }>()
 </script>
 
