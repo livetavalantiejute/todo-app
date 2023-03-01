@@ -19,6 +19,7 @@
     "vue-uuid": "^3.0.0"
   },
   "devDependencies": {
+    "@pinia/testing": "^0.0.15",
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/jsdom": "^21.1.0",
     "@types/node": "^18.14.2",

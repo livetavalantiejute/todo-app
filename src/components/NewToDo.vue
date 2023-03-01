@@ -15,8 +15,11 @@ const selectedStatus = ref('Opened')
 const errors: Ref<Array<string>> = ref([])
 
 const todoStore = useTodoStore()
+const { addTodo } = todoStore
 
-const { statusTransitions, addTodo } = todoStore
+defineProps<{
+  statusTransitions: object
+}>()
 
 const submitTodo = () => {
   let isValid: boolean = false

@@ -15,7 +15,7 @@ const props = defineProps<{
   description: string
   options: Array<string>
   status: string
-  badgeClass: string
+  badgeClass?: string
 }>()
 
 const changeStatus = (todoId: string, newStatus: string) => {

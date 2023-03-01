@@ -10,6 +10,13 @@ const todoStore = useTodoStore()
 
 const { todos } = storeToRefs(todoStore)
 
+const statusTransitions = {
+  Opened: ['In progress', 'Closed'],
+  'In progress': ['Opened', 'Done', 'Closed'],
+  Done: ['Closed'],
+  Closed: ['Opened']
+}
+
 watchEffect(() => {
   localStorage.setItem('todos', JSON.stringify(todos.value))
 })
@@ -22,10 +29,10 @@ watchEffect(() => {
     </header>
     <main>
       <div class="row mt-3">
-        <NewToDo />
+        <NewToDo :statusTransitions="statusTransitions" />
       </div>
       <div class="row mt-5">
-        <TodoList :items="todos" />
+        <TodoList :items="todos" :statusTransitions="statusTransitions" />
       </div>
     </main>
   </div>
